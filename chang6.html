@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>장동인 소개</title>
+<style>
+  :root {
+    --bg: #eef1f6; --card: #ffffff; --ink: #0f1a2e; --muted: #5a6478;
+    --line: #dde2ec; --brand: #1d4ed8; --brand-ink: #ffffff; --soft: #e6edfc; --now: #0e9f6e;
+    --hero: #0f1a2e; --hero-ink: #f3f5fa; --hero-muted: #a9b3c7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0b111d; --card: #121a2a; --ink: #e8ecf4; --muted: #96a0b5;
+      --line: #222c3f; --brand: #7aa2ff; --brand-ink: #0b111d; --soft: #1a2643; --now: #4ade9b;
+      --hero: #121a2a; --hero-ink: #f3f5fa; --hero-muted: #a9b3c7;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0b111d; --card: #121a2a; --ink: #e8ecf4; --muted: #96a0b5;
+    --line: #222c3f; --brand: #7aa2ff; --brand-ink: #0b111d; --soft: #1a2643; --now: #4ade9b;
+    --hero: #121a2a; --hero-ink: #f3f5fa; --hero-muted: #a9b3c7;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard", "Noto Sans KR", "Malgun Gothic", sans-serif;
+    line-height: 1.6; word-break: keep-all; overflow-wrap: anywhere;
+  }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 40px max(16px, env(safe-area-inset-right)) 64px max(16px, env(safe-area-inset-left)); }
+
+  /* Hero */
+  .hero { background: var(--hero); color: var(--hero-ink); border-radius: 20px; padding: 40px; display: grid; grid-template-columns: auto 1fr; gap: 32px; align-items: center; }
+  .mono { width: 112px; height: 112px; border-radius: 50%; background: var(--brand); color: #fff; display: grid; place-items: center; font-size: 40px; font-weight: 800; letter-spacing: -.02em; }
+  .hero h1 { margin: 0; font-size: clamp(34px, 6vw, 52px); line-height: 1.1; }
+  .hero .title { margin: 8px 0 0; color: var(--hero-muted); font-size: 17px; }
+  .hero .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+  .hero .chip { border: 1px solid rgba(255,255,255,.22); border-radius: 999px; padding: 4px 12px; font-size: 13px; color: var(--hero-ink); }
+
+  /* Current roles */
+  .roles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 20px; }
+  .role-card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 20px; }
+  .badge { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 700; color: var(--now); }
+  .badge::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--now); }
+  .role-card h3 { margin: 8px 0 4px; font-size: 18px; line-height: 1.35; }
+  .role-card p { margin: 0; color: var(--muted); font-size: 14px; }
+  .role-card .yr { margin-top: 10px; font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+
+  /* Grid */
+  .grid { display: grid; grid-template-columns: 1.55fr 1fr; gap: 20px; margin-top: 20px; align-items: start; }
+  .panel { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 24px; }
+  .side { display: grid; gap: 20px; }
+  h2 { margin: 0 0 16px; font-size: 18px; display: flex; align-items: center; gap: 10px; }
+  h2 .count { font-size: 12px; font-weight: 700; color: var(--brand); background: var(--soft); border-radius: 999px; padding: 2px 8px; }
+
+  /* Career table */
+  .career { list-style: none; margin: 0; padding: 0; }
+  .career li { display: grid; grid-template-columns: 92px 1fr; gap: 16px; padding: 12px 0; border-top: 1px solid var(--line); }
+  .career li:first-child { border-top: 0; padding-top: 0; }
+  .career .when { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; padding-top: 2px; }
+  .career .org { font-weight: 600; }
+  .career .pos { color: var(--muted); font-size: 14px; }
+
+  /* Lists */
+  .edu { list-style: none; margin: 0; padding: 0; }
+  .edu li { padding: 10px 0; border-top: 1px solid var(--line); }
+  .edu li:first-child { border-top: 0; padding-top: 0; }
+  .edu b { display: block; font-weight: 600; }
+  .edu span { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .skills { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+  .skills li { background: var(--soft); border-radius: 10px; padding: 10px 14px; font-weight: 600; font-size: 15px; display: flex; justify-content: space-between; gap: 10px; align-items: center; }
+  .skills .live { flex-shrink: 0; font-size: 12px; color: var(--brand-ink); background: var(--brand); border-radius: 999px; padding: 2px 8px; }
+
+  /* Books */
+  .books { margin-top: 20px; }
+  .shelf { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 12px; }
+  .bk { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px 14px; display: flex; flex-direction: column; gap: 8px; min-height: 150px; border-top: 4px solid var(--brand); }
+  .bk .y { font-size: 13px; font-weight: 700; color: var(--brand); font-variant-numeric: tabular-nums; }
+  .bk .t { font-weight: 600; font-size: 15px; line-height: 1.45; }
+
+  footer { margin-top: 32px; text-align: center; color: var(--muted); font-size: 13px; }
+
+  /* Tablet */
+  @media (max-width: 960px) {
+    .grid { grid-template-columns: 1fr; }
+    .side { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 760px) {
+    .roles { grid-template-columns: 1fr; gap: 12px; }
+  }
+  /* Phone */
+  @media (max-width: 600px) {
+    .wrap { padding-top: 16px; padding-bottom: 40px; }
+    .hero { grid-template-columns: 1fr; padding: 28px 20px; gap: 18px; border-radius: 16px; }
+    .mono { width: 72px; height: 72px; font-size: 26px; }
+    .hero .title { font-size: 15px; }
+    .panel { padding: 18px; border-radius: 14px; }
+    .role-card { padding: 16px; }
+    .side { grid-template-columns: 1fr; }
+    .career li { grid-template-columns: 1fr; gap: 2px; padding: 10px 0; }
+    .shelf { grid-template-columns: 1fr; gap: 8px; }
+    .bk { min-height: 0; flex-direction: row; align-items: baseline; gap: 12px; border-top-width: 1px; border-left: 4px solid var(--brand); padding: 12px 14px; }
+    .bk .y { flex-shrink: 0; width: 38px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="mono" aria-hidden="true">장</div>
+    <div>
+      <h1>장동인</h1>
+      <p class="title">KAIST 김재철 AI 대학원 책임교수 · AiBB Lab 대표 · DeepAuto.ai CBO</p>
+      <div class="chips">
+        <span class="chip">경영학박사 (Big Data)</span>
+        <span class="chip">AI 전략컨설팅</span>
+        <span class="chip">AI 코딩 스쿨</span>
+        <span class="chip">저서 7권</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="roles">
+    <article class="role-card">
+      <span class="badge">현재</span>
+      <h3>KAIST 김재철 AI 대학원</h3>
+      <p>책임교수 (CAIO과정 담당)</p>
+      <div class="yr">2022 – 현재</div>
+    </article>
+    <article class="role-card">
+      <span class="badge">현재</span>
+      <h3>AiBB Lab</h3>
+      <p>대표 (AI, Big Data, Blockchain)</p>
+      <div class="yr">2019 – 현재</div>
+    </article>
+    <article class="role-card">
+      <span class="badge">현재</span>
+      <h3>DeepAuto.ai</h3>
+      <p>AI벤처기업 CBO (Chief Business Officer)</p>
+      <div class="yr">2023 – 현재</div>
+    </article>
+  </div>
+
+  <div class="grid">
+    <section class="panel">
+      <h2>경력 <span class="count">15</span></h2>
+      <ul class="career">
+        <li><span class="when">2019</span><div><div class="org">연세대 의료 블록체인 고위과정</div><div class="pos">주임교수</div></div></li>
+        <li><span class="when">2017 – 2019</span><div><div class="org">블록체인 프로젝트 Advisor</div><div class="pos">Funkey Pay, MCC, Edenchain, Sigmachain(한국), Linkchain(미국), Tempo ICO(프랑스), Calero(오)</div></div></li>
+        <li><span class="when">2015 – 2018</span><div><div class="org">국방과학연구소</div><div class="pos">빅데이터/AI 과제 PM</div></div></li>
+        <li><span class="when">2014 – 2015</span><div><div class="org">한국 테라데이타</div><div class="pos">부사장</div></div></li>
+        <li><span class="when">2010 – 2014</span><div><div class="org">미래읽기 컨설팅</div><div class="pos">대표</div></div></li>
+        <li><span class="when">2007 – 2009</span><div><div class="org">Ernst &amp; Young</div><div class="pos">컨설팅 본부장</div></div></li>
+        <li><span class="when">2006</span><div><div class="org">Deloitte Consulting</div><div class="pos">전무 (CRM부문 파트너)</div></div></li>
+        <li><span class="when">2002 – 2005</span><div><div class="org">SAS Korea</div><div class="pos">부사장</div></div></li>
+        <li><span class="when">2000 – 2001</span><div><div class="org">Siebel Korea</div><div class="pos">초대 지사장</div></div></li>
+        <li><span class="when">1996 – 2000</span><div><div class="org">Oracle Korea</div><div class="pos">컨설팅 본부 이사</div></div></li>
+        <li><span class="when">1995 – 1996</span><div><div class="org">Oracle HQ</div><div class="pos">Senior Principal Consultant</div></div></li>
+        <li><span class="when">1992 – 1994</span><div><div class="org">Amadeus (Germany)</div><div class="pos">System Support Engineer</div></div></li>
+        <li><span class="when">1991 – 1992</span><div><div class="org">American Airline Information Service</div><div class="pos">Consultant</div></div></li>
+        <li><span class="when">1988 – 1991</span><div><div class="org">EDS</div><div class="pos">System Engineer</div></div></li>
+        <li><span class="when">1984 – 1988</span><div><div class="org">VISA International</div><div class="pos">Programmer</div></div></li>
+      </ul>
+    </section>
+
+    <div class="side">
+      <section class="panel">
+        <h2>전문분야</h2>
+        <ul class="skills">
+          <li>돈되는 AI 도입과 활용을 위한 전략컨설팅</li>
+          <li>CEO를 위한 AI 코딩 스쿨 <span class="live">운영중</span></li>
+          <li>실무자를 위한 AI 코딩 스쿨 <span class="live">운영중</span></li>
+          <li>벤처기업 고문/Advisor</li>
+        </ul>
+      </section>
+      <section class="panel">
+        <h2>학력</h2>
+        <ul class="edu">
+          <li><b>서울과학종합대학원</b><span>2018 · 경영학박사 (Big Data)</span></li>
+          <li><b>University of Southern California</b><span>1994 · Master of Computer Science</span></li>
+          <li><b>서울대학교 공과대학</b><span>1982 · 원자핵공학과 졸업</span></li>
+          <li><b>용산고등학교</b><span>1975 · 졸업</span></li>
+        </ul>
+      </section>
+    </div>
+  </div>
+
+  <section class="books">
+    <div class="panel">
+      <h2>저서 <span class="count">7</span></h2>
+      <div class="shelf">
+        <div class="bk"><span class="y">2025</span><span class="t">AI Agent 시대 기업이 살아남는 법</span></div>
+        <div class="bk"><span class="y">2023</span><span class="t">ChatGPT시대 기업이 살아남는 법</span></div>
+        <div class="bk"><span class="y">2019</span><span class="t">AI로 일하는 기술</span></div>
+        <div class="bk"><span class="y">2017</span><span class="t">IT전문가로 사는 법</span></div>
+        <div class="bk"><span class="y">2015</span><span class="t">빅데이터로 일하는 기술</span></div>
+        <div class="bk"><span class="y">2010</span><span class="t">공피고아</span></div>
+        <div class="bk"><span class="y">1999</span><span class="t">실무자들을 위한 데이터웨어하우스</span></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>장동인 소개자료 기반</footer>
+</div>
+</body>
+</html>

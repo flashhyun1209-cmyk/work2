@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>장동인 소개</title>
+<meta name="description" content="KAIST 김재철 AI 대학원 책임교수, AiBB Lab 대표 장동인의 경력·학력·전문분야·저서 소개">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f7f6f3;
+    --surface: #ffffff;
+    --text: #1d1f23;
+    --muted: #5d636e;
+    --line: #e3e1db;
+    --accent: #1f4e8c;
+    --accent-soft: #e6edf7;
+    --current: #b4541b;
+    --current-soft: #fbeee5;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #14161a;
+      --surface: #1c1f24;
+      --text: #e9e7e2;
+      --muted: #a2a7b0;
+      --line: #2e3239;
+      --accent: #7fa8e0;
+      --accent-soft: #1f2a3a;
+      --current: #e8935c;
+      --current-soft: #3a2a20;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #14161a;
+    --surface: #1c1f24;
+    --text: #e9e7e2;
+    --muted: #a2a7b0;
+    --line: #2e3239;
+    --accent: #7fa8e0;
+    --accent-soft: #1f2a3a;
+    --current: #e8935c;
+    --current-soft: #3a2a20;
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Noto Sans KR", system-ui, -apple-system, sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    word-break: keep-all;
+  }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 56px 16px 72px; }
+
+  header.hero { padding-bottom: 36px; border-bottom: 1px solid var(--line); margin-bottom: 40px; }
+  .eyebrow { color: var(--accent); font-weight: 700; font-size: 14px; letter-spacing: .08em; margin: 0 0 10px; }
+  h1 {
+    font-family: "Noto Serif KR", serif;
+    font-size: clamp(36px, 7vw, 52px);
+    line-height: 1.15;
+    margin: 0 0 18px;
+  }
+  .roles { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+  .roles li {
+    background: var(--current-soft);
+    color: var(--current);
+    font-weight: 500;
+    font-size: 14px;
+    padding: 6px 12px;
+    border-radius: 999px;
+  }
+
+  section { margin-bottom: 44px; }
+  h2 {
+    font-family: "Noto Serif KR", serif;
+    font-size: 24px;
+    margin: 0 0 18px;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+  h2 small { font-family: "Noto Sans KR", sans-serif; font-size: 13px; font-weight: 500; color: var(--muted); }
+
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 8px 24px; }
+
+  /* 경력 타임라인 */
+  .timeline { list-style: none; margin: 0; padding: 0; }
+  .timeline li {
+    display: grid;
+    grid-template-columns: 112px 1fr;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .timeline li:last-child { border-bottom: 0; }
+  .period { color: var(--muted); font-variant-numeric: tabular-nums; font-size: 14px; padding-top: 2px; }
+  .timeline .org { font-weight: 700; }
+  .timeline .role { color: var(--muted); }
+  .timeline li.now .period { color: var(--current); font-weight: 700; }
+  .badge {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--current);
+    border: 1px solid currentColor;
+    border-radius: 4px;
+    padding: 0 6px;
+    margin-left: 6px;
+    vertical-align: 2px;
+  }
+
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .grid section { margin-bottom: 0; }
+
+  .plain { list-style: none; margin: 0; padding: 0; }
+  .plain li { padding: 12px 0; border-bottom: 1px solid var(--line); display: flex; gap: 14px; }
+  .plain li:last-child { border-bottom: 0; }
+  .plain .year { color: var(--accent); font-weight: 700; font-variant-numeric: tabular-nums; min-width: 44px; }
+
+  .expertise { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+  .expertise li {
+    background: var(--accent-soft);
+    border-radius: 10px;
+    padding: 12px 16px;
+    font-weight: 500;
+  }
+  .tag { font-size: 12px; color: var(--current); font-weight: 700; margin-left: 6px; }
+
+  .books { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
+  .books li {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--accent);
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .books .title { font-weight: 700; display: block; }
+  .books .year { color: var(--muted); font-size: 14px; }
+  .books li.latest { border-left-color: var(--current); }
+
+  footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); padding-top: 20px; }
+
+  @media (max-width: 720px) {
+    .wrap { padding-top: 36px; }
+    .grid { grid-template-columns: 1fr; gap: 44px; }
+    .card { padding: 4px 16px; }
+    .timeline li { grid-template-columns: 1fr; gap: 2px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <p class="eyebrow">PROFILE</p>
+    <h1>장동인</h1>
+    <ul class="roles">
+      <li>KAIST 김재철 AI 대학원 책임교수</li>
+      <li>AiBB Lab 대표</li>
+      <li>DeepAuto.ai CBO</li>
+    </ul>
+  </header>
+
+  <section>
+    <h2>경력 <small>Career</small></h2>
+    <div class="card">
+      <ol class="timeline">
+        <li class="now"><span class="period">2022 – 현재</span><div><span class="org">KAIST 김재철 AI 대학원</span><span class="badge">현재</span><div class="role">책임교수 (CAIO 과정 담당)</div></div></li>
+        <li class="now"><span class="period">2019 – 현재</span><div><span class="org">AiBB Lab</span><span class="badge">현재</span><div class="role">대표 (AI, Big Data, Blockchain)</div></div></li>
+        <li class="now"><span class="period">2023 – 현재</span><div><span class="org">DeepAuto.ai (AI 벤처기업)</span><span class="badge">현재</span><div class="role">CBO (Chief Business Officer)</div></div></li>
+        <li><span class="period">2019</span><div><span class="org">연세대학교</span><div class="role">의료 블록체인 고위과정 주임교수</div></div></li>
+        <li><span class="period">2017 – 2019</span><div><span class="org">블록체인 프로젝트 Advisor</span><div class="role">Funkey Pay, MCC, Edenchain, Sigmachain(한국), Linkchain(미국), Tempo ICO(프랑스), Calero(오)</div></div></li>
+        <li><span class="period">2015 – 2018</span><div><span class="org">국방과학연구소</span><div class="role">빅데이터/AI 과제 PM</div></div></li>
+        <li><span class="period">2014 – 2015</span><div><span class="org">한국 테라데이타</span><div class="role">부사장</div></div></li>
+        <li><span class="period">2010 – 2014</span><div><span class="org">미래읽기 컨설팅</span><div class="role">대표</div></div></li>
+        <li><span class="period">2007 – 2009</span><div><span class="org">Ernst &amp; Young</span><div class="role">컨설팅 본부장</div></div></li>
+        <li><span class="period">2006</span><div><span class="org">Deloitte Consulting</span><div class="role">전무 (CRM 부문 파트너)</div></div></li>
+        <li><span class="period">2002 – 2005</span><div><span class="org">SAS Korea</span><div class="role">부사장</div></div></li>
+        <li><span class="period">2000 – 2001</span><div><span class="org">Siebel Korea</span><div class="role">초대 지사장</div></div></li>
+        <li><span class="period">1996 – 2000</span><div><span class="org">Oracle Korea</span><div class="role">컨설팅 본부 이사</div></div></li>
+        <li><span class="period">1995 – 1996</span><div><span class="org">Oracle HQ</span><div class="role">Senior Principal Consultant</div></div></li>
+        <li><span class="period">1992 – 1994</span><div><span class="org">Amadeus (독일)</span><div class="role">System Support Engineer</div></div></li>
+        <li><span class="period">1991 – 1992</span><div><span class="org">American Airline Information Service</span><div class="role">Consultant</div></div></li>
+        <li><span class="period">1988 – 1991</span><div><span class="org">EDS</span><div class="role">System Engineer</div></div></li>
+        <li><span class="period">1984 – 1988</span><div><span class="org">VISA International</span><div class="role">Programmer</div></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <div class="grid">
+    <section>
+      <h2>학력 <small>Education</small></h2>
+      <div class="card">
+        <ul class="plain">
+          <li><span class="year">2018</span><span>서울과학종합대학원 경영학박사 (Big Data)</span></li>
+          <li><span class="year">1994</span><span>University of Southern California, Master of Computer Science</span></li>
+          <li><span class="year">1982</span><span>서울대학교 공과대학 원자핵공학과 졸업</span></li>
+          <li><span class="year">1975</span><span>용산고등학교 졸업</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>전문분야 <small>Expertise</small></h2>
+      <ul class="expertise">
+        <li>돈 되는 AI 도입과 활용을 위한 전략 컨설팅</li>
+        <li>CEO를 위한 AI 코딩 스쿨<span class="tag">운영 중</span></li>
+        <li>실무자를 위한 AI 코딩 스쿨<span class="tag">운영 중</span></li>
+        <li>벤처기업 고문 / Advisor</li>
+      </ul>
+    </section>
+  </div>
+
+  <section style="margin-top:44px">
+    <h2>저서 <small>Books</small></h2>
+    <ul class="books">
+      <li class="latest"><span class="title">AI Agent 시대 기업이 살아남는 법</span><span class="year">2025</span></li>
+      <li><span class="title">ChatGPT 시대 기업이 살아남는 법</span><span class="year">2023</span></li>
+      <li><span class="title">AI로 일하는 기술</span><span class="year">2019</span></li>
+      <li><span class="title">IT 전문가로 사는 법</span><span class="year">2017</span></li>
+      <li><span class="title">빅데이터로 일하는 기술</span><span class="year">2015</span></li>
+      <li><span class="title">공피고아</span><span class="year">2010</span></li>
+      <li><span class="title">실무자들을 위한 데이터웨어하우스</span><span class="year">1999</span></li>
+    </ul>
+  </section>
+
+  <footer>장동인 소개자료</footer>
+</div>
+</body>
+</html>
